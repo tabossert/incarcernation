@@ -1,0 +1,12 @@
+langchain==0.3.4
+python-dotenv==1.0.1
+beautifulsoup4==4.12.3
+requests==2.32.3
+cloudscraper==1.2.71
+flet==0.24.1
+langchain-anthropic==0.2.3
+langchain-community==0.3.3
+langchain-core==0.3.12
+langchain-text-splitters==0.3.0
+unstructured==0.16.0
+nltk==3.9.1
