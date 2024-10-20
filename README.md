@@ -4,15 +4,14 @@ https://incarcernation.com/
 This repo contains a tools to process articles from incarcernation.com and extract the key details into a structured format for the website database.
 
 # Installing Python and Running Programs
-Python must be 3.11 or higher.
+Python version must be 3.10, 3.11, or 3.12.
 
 ## Installing Python on Windows
 
-1. Visit the official Python website: https://www.python.org/downloads/windows/
-2. Download the latest Python installer for Windows
-3. Run the installer
-4. Check "Add Python to PATH" during installation
-5. Click "Install Now"
+1. Download the 3.12 Python installer for Windows https://www.python.org/ftp/python/3.12.7/python-3.12.7-amd64.exe
+2. Run the installer
+3. Check "Add Python to PATH" during installation
+4. Click "Install Now"
 
 ## Installing Python on Mac
 
@@ -23,7 +22,7 @@ Python must be 3.11 or higher.
 ```
 3. Install Python using Homebrew:
 ```
-brew install python
+brew install python@3.12
 ```
 
 ## Installing pip Requirements
