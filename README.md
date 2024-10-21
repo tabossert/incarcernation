@@ -3,6 +3,13 @@ https://incarcernation.com/
 
 This repo contains a tools to process articles from incarcernation.com and extract the key details into a structured format for the website database.
 
+# Clone repo
+```
+git clone https://github.com/tabossert/incarcernation/
+```
+
+If you don't have git you can download the files manually, but git is preferred.
+
 # Installing Python and Running Programs
 Python version must be 3.10, 3.11, or 3.12.
 
