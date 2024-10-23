@@ -8,6 +8,7 @@ import json
 import nltk
 
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
 from langchain_community.document_loaders import UnstructuredHTMLLoader
 from langchain.docstore.document import Document
 from unstructured.cleaners.core import remove_punctuation,clean,clean_extra_whitespace
@@ -17,6 +18,8 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import CharacterTextSplitter
+
+load_dotenv()
 
 nltk.download('punkt')
 nltk.download('punkt_tab')
@@ -74,7 +77,7 @@ def process_article(url):
     document_content = document
 
     # Define your question
-    question = "You should extract victim's name as victim_name (often referred to as the deceased, or as 'identified', or as 'named'), gender as victim_gender (try to determine based on first name if possible), age as victim_age, race as victim_race, date of the incident as incident_date, address broken down into street as incident_street, city as incident_city, state as incident_state, county as incident_county, Which police agencies were involved as agency_involved, officer's name if available as officer_name, cause of death as cause_of_death, and a paragraph summary of the incident as incident_summary. You should output this as a SQL insert statement into table police_incidents. Keep the sql statements to a single line. If a field is not provided, set it to null. And fix any punctuation, grammar, and spelling errors. Finally output the original url as source_url."
+    question = "You should extract victim's name as victim_name (often referred to as the deceased, or as 'identified', or as 'named'), gender as victim_gender (try to determine based on first name if possible), age as victim_age, race as victim_race, date of the incident as incident_date, address broken down into street as incident_street, city as incident_city, state as incident_state, county as incident_county, Which police agencies were involved as agency_involved, officer's name if available as officer_name, cause of death as cause_of_death, and a paragraph summary of the incident as incident_summary include in the summary statements from both the victim's family and friends as well as the police. You should output this as a SQL insert statement into table police_incidents. Keep the sql statements to a single line. If a field is not provided, set it to null. And fix any punctuation, grammar, and spelling errors. Finally output the original url as source_url."
 
     response = chain.invoke({"document": document_content, "question": question})
 

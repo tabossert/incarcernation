@@ -41,6 +41,15 @@ If you prefer you can create a virtual environment to run the program in, but it
 pip install -r requirements.txt
 ```
 
+## Setting the Anthropic API Key
+1. Navigate to the directory article-processor
+2. Create a file called .env
+3. Add the following line in the .env file:
+```
+ANTHROPIC_API_KEY=<your-anthropic-api-key>
+```
+4. Save the file
+
 ## Running a Python Program
 
 1. Navigate to the directory article-processor
