@@ -1,9 +1,9 @@
 import flet as ft
+import undetected_chromedriver as uc
 import os
 import tempfile
 import base64
 import requests
-import cloudscraper
 import json
 import nltk
 
@@ -26,9 +26,16 @@ nltk.download('punkt_tab')
 
 def process_article(url):
     def save_website_to_html(url, output_file):
-        scraper = cloudscraper.create_scraper()
-        response = scraper.get(url)
-        html = response.text
+
+        # Get the HTML content of the page using chromedriver which will launch a browser window
+        options = uc.ChromeOptions()
+        options.headless = False
+        driver = uc.Chrome(
+            options=options,
+            use_subprocess=False)
+        driver.get(url)
+        html = driver.page_source
+        driver.quit()
 
         # Parse the HTML content
         soup = BeautifulSoup(html, 'html.parser')
