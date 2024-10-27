@@ -19,11 +19,6 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import CharacterTextSplitter
 
-load_dotenv()
-
-nltk.download('punkt')
-nltk.download('punkt_tab')
-
 def process_article(url):
     def save_website_to_html(url, output_file):
 
@@ -169,4 +164,10 @@ def main(page: ft.Page):
         ft.Row([copy_button, download_button])
     )
 
-ft.app(target=main)
+if __name__ == "__main__":
+    load_dotenv()
+
+    nltk.download('punkt')
+    nltk.download('punkt_tab')
+
+    ft.app(target=main)
