@@ -10,8 +10,10 @@ git clone https://github.com/tabossert/incarcernation/
 
 If you don't have git you can download the files manually, but git is preferred.
 
+
 # Installing Python and Running Programs
 Python version must be 3.10, 3.11, or 3.12.
+
 
 ## Installing Python on Windows
 
@@ -19,6 +21,12 @@ Python version must be 3.10, 3.11, or 3.12.
 2. Run the installer
 3. Check "Add Python to PATH" during installation
 4. Click "Install Now"
+
+
+## Installing Chrome (Required for ChromeDriver)
+
+1. Download Chrome from https://www.google.com/chrome/
+
 
 ## Installing Python on Mac
 
@@ -41,6 +49,7 @@ If you prefer you can create a virtual environment to run the program in, but it
 pip install -r requirements.txt
 ```
 
+
 ## Setting the Anthropic API Key
 1. Navigate to the directory article-processor
 2. Create a file called .env
@@ -49,6 +58,7 @@ pip install -r requirements.txt
 ANTHROPIC_API_KEY=<your-anthropic-api-key>
 ```
 4. Save the file
+
 
 ## Running a Python Program
 
